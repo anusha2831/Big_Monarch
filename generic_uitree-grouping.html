@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+	 <!-- Stuff that is only required in this demo (no need to copy) -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+   <!-- <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="demo-framework.css">
+    <link rel="stylesheet" type="text/css" href="simple.css" />
+    <link rel="stylesheet" type="text/css" href="nested.css" />
+    <link rel="stylesheet" type="text/css" href="types.css" />
+    <link rel="stylesheet" type="text/css" href="advanced.css" />-->
+	<style>
+	ul li .list{
+	
+	min-height: 41px;
+	}
+	ul .list1{
+	border: 1px solid red;
+	min-height: 41px;
+	}
+	</style>
+		
+	</head>
+	<body>
+	<div ng-app="demo">
+		<div ng-controller="nestedcontroller">
+		
+			<!-- Markup for lists inside the dropzone. It's inside a seperate template
+     because it will be used recursively. The dnd-list directive enables
+     to drop elements into the referenced array. The dnd-draggable directive
+     makes an element draggable and will transfer the object that was
+     assigned to it. If an element was dragged away, you have to remove
+     it from the original list yourself using the dnd-moved attribute -->
+	
+<script type="text/ng-template" id="list.html">
+    <ul dnd-list="list" class="list1">
+        <li class="list" ng-if="fun(item.type)" 
+		ng-repeat="item in list"
+            dnd-draggable="item"
+            dnd-effect-allowed="move"
+            dnd-moved="list.splice($index, 1)"
+            dnd-selected="models.selected = item"
+            ng-class="{selected: models.selected === item}"
+            ng-include="item.type + '.html'">
+        </li>
+    </ul>
+</script>
+
+<!-- This template is responsible for rendering a container element. It uses
+     the above list template to render each container column -->
+<script type="text/ng-template" id="container.html">
+    <div class="container-element box box-blue">
+        <h3 ng-click="selectednode(this.$parent.$parent.$parent,item,this)" >Container {{item.id}}</h3>
+        <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'">{{column}}</div>
+        <div class="clearfix"></div>
+    </div>
+</script>
+
+<!-- Template for a normal list item -->
+<script type="text/ng-template" id="item.html">
+    <div class="item" >Item {{item.id}}</div>
+</script>
+
+<!-- Main area with dropzones and source code -->
+<div class="col-md-10">
+    <div class="row">
+        <div ng-repeat="(zone, list) in models.dropzones" class="col-md-6">
+            <div class="dropzone box box-yellow">
+                <!-- The dropzone also uses the list template -->
+                <h3>Dropzone {{zone}}</h3>
+                <div ng-include="'list.html'"></div>
+            </div>
+        </div>
+    </div>
+
+ 
+</div>
+
+<!-- Sidebar -->
+
+		<button ng-click="Delete();">Delete</button>
+		  
+		 <button ng-click="add(newcontainer);" style="clear:both">Add<button>
+		 <input type="text" ng-model="newcontainer" style="clear:both">
+		</div>
+		
+	</div>	
+	 
+	<script src="js/angular-1.3.js"></script> 
+	<script src="js/angular-drag-and-drop-lists.js"></script>
+	<!--<script src="prism.js"></script>
+    <script src="demo-framework.js"></script>
+    <script src="view-source.js"></script>
+    <script src="simple.js"></script>
+    <script src="types.js"></script>
+    <script src="advanced.js"></script>-->
+	
+		<script>
+		var app=angular.module("demo",["dndLists"]);
+		app.controller('nestedcontroller',function($scope){
+		$scope.selectednode=function(data,node,scope){
+			$scope.selectedparent=data;
+			$scope.seletednode=node.columns;
+			$scope.selectedscope=scope;
+			
+		}
+		
+		$scope.itemcount=17;
+		$scope.add=function(data){
+		console.log(data);
+			var json={
+			"type": "container",
+			 "id": $scope.itemcount.toString(),
+			 "columns":[[]]
+			}
+			$scope.itemcount=$scope.itemcount+1;
+			$scope.models.dropzones.A.push(json);
+		}
+		
+		
+		$scope.Delete=function(){		
+			for(i in $scope.models.dropzones){
+				for(k in $scope.models.dropzones[i]){
+					if($scope.models.dropzones[i][k].type=="container" && $scope.models.selected.type=="container"){
+							if($scope.models.dropzones[i][k].id==$scope.models.selected.id){
+								for(l in $scope.models.dropzones[i][k].columns[0]){
+									if(typeof($scope.models.dropzones[i][k].columns[0][l]=="object")){
+									if($scope.models.dropzones[i][k].columns[0][l].type!=undefined){
+									$scope.models.dropzones[i].push({
+										"type": $scope.models.dropzones[i][k].columns[0][l].type,
+										"id": $scope.models.dropzones[i][k].columns[0][l].id
+										});
+							}
+									}
+								$scope.models.dropzones[i][k][l]={};
+								}	
+								$scope.models.dropzones[i][k]={};	
+									
+							}
+							
+							
+					}
+					
+				}
+
+			}
+		}
+		
+		$scope.fun=function(data){
+		if(data!=undefined){
+		return true;
+		}else{
+		return false;
+		}
+		}
+ $scope.models = {
+        selected: null,
+        templates: [
+            {type: "item", id: 2},
+            {type: "container", id: 1, columns: [[]]}
+        ],
+        dropzones: {
+            "A": [
+                {
+                    "type": "container",
+                    "id": 1,
+					 allowedTypes: ['item'],
+                    "columns": [
+                        [
+                            {
+                                "type": "item",
+                                "id": "1"
+                            },
+                            {
+                                "type": "item",
+                                "id": "2"
+                            },
+							{
+                                "type": "item",
+                                "id": "3"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "type": "item",
+                    "id": "4"
+                },
+                {
+                    "type": "item",
+                    "id": "5"
+                },
+                {
+                    "type": "item",
+                    "id": "6"
+                }
+            ],
+            "B": [
+                {
+                    "type": "item",
+                    "id": 7
+                },
+                {
+                    "type": "item",
+                    "id": "8"
+                },
+                {
+                    "type": "container",
+                    "id": "2",
+                    "columns": [
+                        [
+                            {
+                                "type": "item",
+                                "id": "9"
+                            },
+                            {
+                                "type": "item",
+                                "id": "10"
+                            },
+                            {
+                                "type": "item",
+                                "id": "11"
+                            }
+                        ],
+                        [
+                            {
+                                "type": "item",
+                                "id": "12"
+                            },
+                            {
+                                "type": "container",
+                                "id": "3",
+                                "columns": [
+                                    [
+                                        {
+                                            "type": "item",
+                                            "id": "13"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "item",
+                                            "id": "14"
+                                        }
+                                    ]
+                                ]
+                            },
+                            {
+                                "type": "item",
+                                "id": "15"
+                            },
+                            {
+                                "type": "item",
+                                "id": "16"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "type": "item",
+                    "id": 16
+                }
+            ]
+        }
+    };
+	  $scope.$watch('models.dropzones', function(model) {
+        $scope.modelAsJson = angular.toJson(model, true);
+    }, true);
+	
+		});
+		</script>
+		
+	</body>
+	
+</html>

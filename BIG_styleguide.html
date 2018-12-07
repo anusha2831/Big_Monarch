@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BIG MONARCH</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet" >
+<!-- Loads the bootstrap css -->
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<!-- Loads the bootsrap theme css -->
+<link rel="stylesheet" href="css/style.css"/>
+<!--<link rel="stylesheet" href="css/dev-style.css"/>-->
+<link rel="stylesheet" type="text/css" href="css/big.bootstrap.css">
+<link rel="stylesheet" href="css/big.ui-grid.css"/>
+</head>
+<body data-spy="scroll" data-target=".sg-nav">
+<!-- ********************** Body section starts ******** -->
+<div class=" col-xs-12 no-pad">
+  <div id="wrapper" class="wrapper container"> <!-- ****************** Wrapper Starts ******************** -->
+    <section class="col-xs-12 col-sm-9 col-md-10">
+ 
+    
+    <div id="sg-overview" class="col-xs-12">
+    <h1 class="page-header" id="Overview">Overview</h1>
+        <p class="lead">The purpose do this artifact is visual style guide and interaction design that has been adapted to project Monarch. This design document is an attempt to cover all aspects of prototype design for this project.</p>
+        </div>
+        
+        <div id="sg-typography" class="col-xs-12">
+    <h1 class="page-header" id="type">Typography</h1>
+ <h1>h1. Monarch heading</h1>
+ <h2>h2. Monarch heading</h2>
+ <h3>h3. Monarch heading</h3>
+ <h4>h4. Monarch heading</h4>
+ <h5>h5. Monarch heading</h5>
+ <h6>h6. Monarch heading</h6>
+ </div>
+ 
+ <div id="sg-buttons" class="col-xs-12">
+ <h1 class="page-header" id="type">Buttons</h1>
+ 	<button class="btn mr10">Button</button>
+    <button class="btn btn-primary mr10">BtnPrimary</button>
+    <button class="btn btn-warning mr10">BtnWarning</button>
+ </div>
+ <div id="sg-text" class="col-xs-12">
+ <h1 class="page-header" id="type">Text</h1>
+ <p>Our solutions have been developed in collaboration with subject matter experts in technology, real estate, business process engineering and architecture. We deliver
+strategic insight that enables informed real estate decisions for owners, occupiers, and investors.</p>
+ </div>
+  <div id="sg-form" class="col-xs-12">
+   <h1 class="page-header" id="type">Form Elements</h1>
+   <form role="form">
+  <div class="form-group">
+    <label for="ex1">Label</label>
+    <input type="email" class="form-control mb10" id="exampleInputEmail1" placeholder="textbox-default">
+    <input type="email" class="form-control mb10 textbox-small" id="exampleInputEmail1" placeholder="textbox-small">
+    <input type="email" class="form-control mb10 textbox-medium" id="exampleInputEmail1" placeholder="textbox-medium">
+    <input type="email" class="form-control mb10 textbox-large" id="exampleInputEmail1" placeholder="textbox-large">
+    <input type="email" class="form-control mb10 textbox-small" id="exampleInputEmail1" value="" placeholder="editable text" >
+    <input type="email" class="form-control mb10 textbox-small" id="exampleInputEmail1" value="" placeholder="uneditable text" readonly="">
+    <input type="email" class="form-control mb10 textbox-small" id="exampleInputEmail1" value="" placeholder="disabled text" disabled="">
+  </div>
+  
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> CheckBox
+    </label>
+  </div>
+  <div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio
+  </label>
+</div>
+<div class="form-group">
+	
+    <textarea  class="form-control textarea-s  mt10" id="controlLabel" placeholder="" value="This is a test" type="text" >textarea-s with fixed height</textarea>
+    <textarea  class="form-control textarea-m mt10" id="controlLabel" placeholder="" value="This is a test" type="text" >textarea-m with fixed height</textarea>
+    <textarea  class="form-control textarea-l mt10" id="controlLabel" placeholder="" value="This is a test" type="text" >textarea-l with fixed height</textarea>
+    <textarea  class="form-control mt10" id="controlLabel" placeholder="" value="This is a test" type="text" >textarea with expandable height</textarea>
+	<textarea disabled="" class="form-control textarea-l mt10" id="controlLabel" placeholder="" value="This is a test" type="text" >textarea disabled</textarea>
+    </div>
+   
+</form>
+   
+   
+   
+   </div>
+   <div id="sg-dropdown" class="col-xs-12">
+   <h1 class="page-header" id="type">Dropdown</h1>
+   <div class="dropdown collections"> 
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu " role="menu">
+                          <li>
+                            <ul class=" nav nav-tabs" role="tablist">
+                              <li ><a href="#all-work" role="tab" data-toggle="tab" id="all-work-link">All Work</a></li>
+                              <li><a href="#my-work" role="tab" data-toggle="tab">My Work</a></li>
+                              <li><a href="#my-requests" role="tab" data-toggle="tab">My Requests</a></li>
+                              <li><a href="#my-criticals" role="tab" data-toggle="tab">My Criticals</a></li>
+                              <li><a href="#" role="tab" data-toggle="tab">My Custom Collection</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+   </div>
+    <div id="sg-modal" class="col-xs-12">
+    <h1 class="page-header" id="type">Modal Popup</h1>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div id="sg-icons" class="col-xs-12">
+    <h1 class="page-header" id="type">BIG icons</h1>
+    <ul class="list-inline list-view col-xs-12">
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-map-default no-mar"></p><p>icon-map-default</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-map-max no-mar"></p><p>icon-map-max</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-map-min no-mar"></p><p>icon-map-min</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-summary-default no-mar"></p><p>icon-summary-default</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-summary-max no-mar"></p><p>icon-summary-max</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-summary-min no-mar"></p><p>icon-summary-min</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-list-default no-mar"></p><p>icon-list-default</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-list-max no-mar"></p><p>icon-list-max</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-list-min no-mar"></p><p>icon-list-min</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-three-bars no-mar"></p><p>icon-three-bars</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-chevron-down no-mar"></p><p>icon-chevron-down</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-chevron-up no-mar"></p><p>icon-chevron-up</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-chevron-left no-mar"></p><p>icon-chevron-left</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-chevron-right no-mar"></p><p>icon-chevron-right</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-chevron-right-end no-mar"></p><p>icon-chevron-right-end</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-chevron-left-end no-mar"></p><p>icon-chevron-left-end</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-add no-mar"></p><p>icon-add</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-remove no-mar"></p><p>icon-remove</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-edit no-mar"></p><p>icon-edit</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-delete no-mar"></p><p>icon-delete</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-cancel no-mar"></p><p>icon-cancel</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-ok no-mar"></p><p>icon-ok</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-info no-mar"></p><p>icon-info</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-warning no-mar"></p><p>icon-warning</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-help no-mar"></p><p>icon-help</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-settings no-mar"></p><p>icon-settings</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-filter no-mar"></p><p>icon-filter</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-save no-mar"></p><p>icon-save</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-save-all no-mar"></p><p>icon-save-all</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-search no-mar"></p><p>icon-search</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-ok-fill no-mar"></p><p>icon-ok-fill</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-info-fill no-mar"></p><p>icon-info-fill</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-warning-fill no-mar"></p><p>icon-warning-fill</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-alarm-1 no-mar"></p><p>icon-alarm-1</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-alarm-2 no-mar"></p><p>icon-alarm-2</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-alarm-3 no-mar"></p><p>icon-alarm-3</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-alarm-4 no-mar"></p><p>icon-alarm-4</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-priority-1 no-mar"></p><p>icon-priority-1</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-import no-mar"></p><p>icon-import</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-export no-mar"></p><p>icon-export</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-up no-mar"></p><p>icon-arrow-up</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-down no-mar"></p><p>icon-arrow-down</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-left no-mar"></p><p>icon-arrow-left</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-right no-mar"></p><p>icon-arrow-right</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-circle-up no-mar"></p><p>icon-arrow-circle-down</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-circle-down no-mar"></p><p>icon-arrow-circle-down</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-circle-left no-mar"></p><p>icon-arrow-circle-left</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-arrow-circle-right no-mar"></p><p>icon-arrow-circle-right</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-big-logo no-mar"></p><p>icon-big-logo</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-timeout no-mar"></p><p>icon-timeout</p></li>
+    <li class="col-xs-12 col-sm-6 col-md-4 mtb8 text-center"><p class="icon-logout no-mar"></p><p>icon-logout</p></li>
+    </ul>
+    </div>
+    <div id="sg-pagenum" class="col-xs-12">
+    <h1 class="page-header" id="type">Pagination</h1>
+    
+    </div>
+    <div id="sg-breadcrumb" class="col-xs-12">
+    <h1 class="page-header" id="type">Breadcrumb</h1>
+    
+    	<ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Work Requests</a></li>
+        <li class="active">All Work</li>
+        </ol>
+    
+    </div>
+    <div id="sg-tabs" class="col-xs-12">
+    <h1 class="page-header" id="type">Section Tabs</h1>
+    <div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">Home</div>
+    <div role="tabpanel" class="tab-pane" id="profile">Profile</div>
+    <div role="tabpanel" class="tab-pane" id="messages">Messages</div>
+    <div role="tabpanel" class="tab-pane" id="settings">Settings</div>
+  </div>
+
+</div>
+    </div>
+    <div id="sg-leftnav" class="col-xs-12">
+    <h1 class="page-header" id="type">Left Navigation</h1>
+    <nav class="left-nav pos-rel mb10">
+          <div class="nav-links">
+            <ul class="nav nav-tabs list-unstyled text-capitalize" role="tablist">
+              <li><a href="#work-req" id="request-link" class="selected" role="tab" data-toggle="tab">Work Requests</a></li>
+              <li class="ess-hidden"><a href="javascript:void(0);" role="tab" data-toggle="tab">Leases</a></li>
+              <li class="ess-hidden"><a href="javascript:void(0);" role="tab" data-toggle="tab">Projects</a></li>
+              <li class="ess-hidden"><a href="javascript:void(0);" role="tab" data-toggle="tab">Moves</a></li>
+              <li class="ess-hidden" ><a href="javascript:void(0);" role="tab" data-toggle="tab">Facility admin</a></li>
+              <li class="ess-hidden hidden-xs" ><a href="#portal-admin" role="tab" data-toggle="tab" id="adm-portal-link">Portal Admin</a></li>
+            </ul>
+            </div>
+            </nav>
+    </div>
+    
+    </section>
+     
+    </section>
+ <section class="col-xs-12 col-sm-3 col-md-2 sg-nav">
+ 	<ul class="nav nav-pills nav-stacked affix">
+    <li class="active"><a href="#sg-overview">Overview</a></li>
+    <li><a href="#sg-typography">Typography</a> </li>
+    <li><a href="#sg-buttons">Buttons</a> </li>
+    <li><a href="#sg-text">Text</a> </li>
+    <li><a href="#sg-form">Form Elements</a> </li>
+    <li><a href="#sg-dropdown">Dropdown</a> </li>
+     <li><a href="#sg-modal">Modal Popup</a> </li>
+     <li><a href="#sg-icons">BIG icons</a> </li>
+     <li><a href="#sg-pagenum">Pagination</a> </li>
+     <li><a href="#sg-breadcrumb">Breadcrumb</a> </li>
+     <li><a href="#sg-tabs">Section Tabs</a> </li>
+     <li><a href="#sg-leftnav">Left Navigation</a> </li>
+    </ul>
+ </section>
+  </div>
+</div>
+<script src="js/jquery-1.10.2.js"></script> <!-- Loads the jquery library --> 
+<script src="js/modernizr.custom.js"></script> <!-- Loads the modenizer script --> 
+<script src="js/bootstrap.js"></script> 
+
+</body>
+<!-- *********************** Body Section Ends ********************** -->
+</html>

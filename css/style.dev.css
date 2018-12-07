@@ -1,0 +1,66 @@
+﻿/* CSS Document */
+
+
+/*
+This block contains CSS Changes made during development - BEGIN
+*/
+
+.left-nav {
+	display: none;
+}
+.middle-section {
+	margin-left: 0 !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #a94442;
+	border-width: 2px;
+}
+.data-grid {
+	overflow-y: hidden !important;
+	overflow-x: hidden !important;
+}
+.pagination-page-size {
+	margin-top: 3px;
+	margin-left: 20px;
+}
+.pagination {
+	margin: -1px 0;
+}
+.picker, .picker__holder {
+	position:relative;
+}
+.pagination-message {
+	margin-top: 3px;
+	margin-right: 10px;
+}
+.grid-master {
+	border:0 !important;
+}
+
+
+/*
+This block contains CSS Changes made during development - END
+*/
+
+
+ @media only screen and (min-width: 768px) {
+/*
+This block contains CSS Changes made during development - BEGIN
+*/
+.outer-summary-view {
+	border: 1px solid #ccc;
+}
+/*
+This block contains CSS Changes made during development - END
+*/
+
+
+}
+ @media only screen and (min-width: 992px) {
+}
+ @media only screen and (max-width: 768px) {
+.summary-view-xs {
+	overflow-y: scroll;
+	border: 1px solid #ccc;
+}
+}

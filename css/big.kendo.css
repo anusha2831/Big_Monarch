@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.k-grid-header table, .k-grid-content table, .k-grid-footer table, .k-grid-content-locked > table {
+	table-layout: fixed;
+}
+.k-grid table {
+	width:100%;
+}
+.k-ff body.km-view, .k-ff body.km-pane {
+	overflow:auto;
+}
+.k-pager-numbers .k-state-selected {
+	border-radius: 0px;
+	border-style:none;
+	border-width: 0px;
+	text-align: center;
+}
+.k-header, .k-grid-header, .k-toolbar, .k-dropdown-wrap, .k-picker-wrap, .k-numeric-wrap, .k-grouping-header, .k-pager-wrap, .k-textbox, .k-button, .k-progressbar, .k-draghandle, .k-autocomplete, .k-state-highlight, .k-tabstrip-items .k-item, .km-pane-wrapper > .km-pane > .km-view > .km-content {
+	background-image: none;
+}
+.k-grid-header th.k-header > .k-link {
+	background-color: #5bc0de;
+}
+.k-state-selected, .k-state-selected:link, .k-state-selected:visited, .k-list > .k-state-selected, .k-list > .k-state-highlight, .k-panel > .k-state-selected, .k-ghost-splitbar-vertical, .k-ghost-splitbar-horizontal, .k-draghandle.k-state-selected:hover, .k-scheduler .k-scheduler-toolbar .k-state-selected, .k-scheduler .k-today.k-state-selected, .k-marquee-color {
+	background-color: #d3d3d3;
+	border-color: none;
+	color: #5f5f5f;
+}
+.k-block, .k-button, .k-textbox, .k-drag-clue, .k-touch-scrollbar, .k-window, .k-window-titleless .k-window-content, .k-window-action, .k-inline-block, .k-grid .k-filter-options, .k-grouping-header .k-group-indicator, .k-autocomplete, .k-multiselect, .k-combobox, .k-dropdown, .k-dropdown-wrap, .k-datepicker, .k-timepicker, .k-colorpicker, .k-datetimepicker, .k-notification, .k-numerictextbox, .k-picker-wrap, .k-numeric-wrap, .k-colorpicker, .k-list-container, .k-calendar-container, .k-calendar td, .k-calendar .k-link, .k-treeview .k-in, .k-editor-inline, .k-tooltip, .k-tile, .k-slider-track, .k-slider-selection, .k-upload {
+	border-radius: 0px;
+}
+.k-autocomplete.k-state-default, .k-picker-wrap.k-state-default, .k-numeric-wrap.k-state-default, .k-dropdown-wrap.k-state-default {
+	background-image: none;
+	border-color: #d3d3d3;
+}
+.k-header, .k-grid-header, .k-toolbar, .k-dropdown-wrap, .k-picker-wrap, .k-numeric-wrap, .k-grouping-header, .k-pager-wrap, .k-textbox, .k-button, .k-progressbar, .k-draghandle, .k-autocomplete, .k-state-highlight, .k-tabstrip-items .k-item, .km-pane-wrapper > .km-pane > .km-view > .km-content {
+	background-color: #f3f3f4;
+	background-image: none;
+	background-position: 50% 50%;
+}
+.k-state-hover, .k-state-hover:hover, .k-splitbar-horizontal-hover:hover, .k-splitbar-vertical-hover:hover, .k-list > .k-state-hover, .k-scheduler .k-scheduler-toolbar ul li.k-state-hover, .k-pager-wrap .k-link:hover, .k-dropdown .k-state-focused, .k-filebrowser-dropzone, .k-mobile-list .k-item > .k-link:active, .k-mobile-list .k-item > .k-label:active, .k-mobile-list .k-edit-label.k-check:active, .k-mobile-list .k-recur-view .k-check:active {
+	background-color: #d3d3d3;
+	border-color: none;
+	color: #5f5f5f;
+}
+.k-button:hover, .k-button.k-state-hover, .k-button:focus, .k-button.k-state-focused, .k-textbox:hover, .k-state-hover, .k-state-hover:hover, .k-pager-wrap .k-link:hover, .k-other-month.k-state-hover .k-link, div.k-filebrowser-dropzone em, .k-draghandle:hover {
+	background-image: none;
+}
+.k-pager-numbers .k-link {
+	border-radius:0px;
+	border-style:none;
+	border-width: 0px;
+	line-height: 2em;
+	text-align: center;
+}
+.k-pager-wrap > .k-link {
+	border-radius:0px;
+}
+@media only screen and (min-width: 768px) {
+}

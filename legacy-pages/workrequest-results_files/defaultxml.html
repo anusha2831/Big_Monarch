@@ -1,0 +1,2026 @@
+
+<!-- saved from url=(0045)https://dev.big-rpms.com/WEB01/defaultxml.asp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script language="javascript" type="text/javascript">
+window.uDateMask = "d-M-Y";
+window.uTimeMask = "g:i a";
+webserverPath_JS = "https://dev.big-rpms.com/WEB01"; 
+OracleMonthNamesLongArray = new Array()
+OracleMonthNamesLongArray[0] = 'January'
+OracleMonthNamesLongArray[1] = 'February'
+OracleMonthNamesLongArray[2] = 'March'
+OracleMonthNamesLongArray[3] = 'April'
+OracleMonthNamesLongArray[4] = 'May'
+OracleMonthNamesLongArray[5] = 'June'
+OracleMonthNamesLongArray[6] = 'July'
+OracleMonthNamesLongArray[7] = 'August'
+OracleMonthNamesLongArray[8] = 'September'
+OracleMonthNamesLongArray[9] = 'October'
+OracleMonthNamesLongArray[10] = 'November'
+OracleMonthNamesLongArray[11] = 'December'
+OracleMonthNamesShortArray = new Array()
+OracleMonthNamesShortArray[0] = 'Jan'
+OracleMonthNamesShortArray[1] = 'Feb'
+OracleMonthNamesShortArray[2] = 'Mar'
+OracleMonthNamesShortArray[3] = 'Apr'
+OracleMonthNamesShortArray[4] = 'May'
+OracleMonthNamesShortArray[5] = 'Jun'
+OracleMonthNamesShortArray[6] = 'Jul'
+OracleMonthNamesShortArray[7] = 'Aug'
+OracleMonthNamesShortArray[8] = 'Sep'
+OracleMonthNamesShortArray[9] = 'Oct'
+OracleMonthNamesShortArray[10] = 'Nov'
+OracleMonthNamesShortArray[11] = 'Dec'
+
+</script>
+<script type="text/javascript" language="javascript" src="clsbrowser.js"></script>
+<script type="text/javascript" language="javascript" src="clientscript.js"></script>
+<script type="text/javascript" language="javascript" src="remotexml.js"></script>
+<script type="text/javascript" language="javascript" src="clsxmlhttp.js"></script>
+<script type="text/javascript" language="javascript" src="clsxmldom.js"></script>
+<script type="text/javascript" language="javascript" src="clsremotelocalizer.js"></script>
+<script type="text/javascript" language="javascript" src="clslayer.js"></script>
+<script type="text/javascript" language="javascript" src="clsmousepos.js"></script>
+<script type="text/javascript" language="javascript" src="clsdatemask.js"></script>
+<script type="text/javascript" language="javascript" src="clscalendar.js"></script><style type="text/css">TH.clsCalMonth{background-color: #003366; layer-background-color: #003366;font-size: 10pt; font-family: arial; font-weight: bold; color: #FFFFFF; align:center}.clsCalDay{height:20px;background-color: #FFFFFF; font-size: 8pt; font-family: arial;border-left:1px solid #FFFFFF;border-right:1px solid #FFFFFF; border-top:1px solid #FFFFFF;border-bottom:1px solid #FFFFFF; padding:1px;}A.calLink{color:#003366;text-decoration:none}A.calLink:visited{color:#003366;text-decoration:none}A.calLink:hover{color:#FF6600;}.calBack{background-color:#EFEFEF;border:2px solid #003366}.clsDayHover{padding:1px;height:20px;background-color:#FFCC66;cursor:pointer;font-size: 8pt; font-family: arial;color:#FFFFFF;border-left:1px solid #FF9900;border-right:1px solid #FF9900; border-top:1px solid #FF9900;border-bottom:1px solid #FF9900;}.clsDaySELECTED{padding:1px;height:20px;background-color:#CCFFFF;cursor:pointer;font-size: 8pt; font-family: arial;color:#3399CC;border-left:1px solid #3399CC;border-right:1px solid #3399CC; border-top:1px solid #3399CC;border-bottom:1px solid #3399CC;}.clsCalBlDay{height:20px;background-color: #EFEFEF; font-size: 6pt; font-family: arial}.clsWkDay{padding:1px;height:20px;background-color: #3399CC; font-size: 8pt; font-family: arial; text-align: center; color: #FFFFFF}.clsToday{padding:1px;height:20px;background-color:#EFEFEF;font-size: 8pt; font-family: arial;border-left:1px solid #FF0000;border-right:1px solid #FF0000; border-top:1px solid #FF0000;border-bottom:1px solid #FF0000;}.clscurDate{padding:1px;height:20px;background-color:#EFEFEF;font-size: 8pt; font-family: arial;border-left:1px solid #3399CC;border-right:1px solid #3399CC; border-top:1px solid #3399CC;border-bottom:1px solid #3399CC;}INPUT.clsCalInput{font-size: 8pt; BORDER-RIGHT: 1px solid #003366;BORDER-LEFT: 1px solid #003366;BORDER-TOP: 1px solid #003366;BORDER-BOTTOM: 1px solid #003366;BACKGROUND-COLOR: #EEFEFEF; COLOR: #003366;}INPUT.clsCalInputB{font-size: 10px; BORDER-RIGHT: 1px solid #006699;BORDER-LEFT: 1px solid #006699;BORDER-TOP: 1px solid #006699;BORDER-BOTTOM: 1px solid #006699;BACKGROUND-COLOR: #003366; COLOR: #FFFFFF;padding:1px;text-decoration:bold}INPUT.clsCalInputBHOVER{cursor:pointer;font-size: 10px; BORDER-RIGHT: 1px solid #006699;BORDER-LEFT: 1px solid #006699;BORDER-TOP: 1px solid #006699;BORDER-BOTTOM: 1px solid #006699;BACKGROUND-COLOR: #003366; COLOR: #FFFFFF;padding:1px;text-decoration:bold}INPUT.clsCalInputHOVER{background-color:#FFCC66;cursor:pointer;font-size: 8pt;color:#FFFFFF;border-left:1px solid #FF9900;border-right:1px solid #FF9900; border-top:1px solid #FF9900;border-bottom:1px solid #FF9900;}</style>
+<script type="text/javascript" language="javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="underscore-min.js"></script>
+
+<script language="javascript">
+	function WriteButton(Image, Title, Function, ID)
+	{
+		var HTML = "";
+		
+		HTML += '<!--button ' + ID + ' -->';
+		HTML += '<table valign="middle" align="center" border="0" cellspacing="0" cellpadding="0" ID="Table1">';
+		HTML += '<tr>';
+		HTML += '<td align="center" valign="middle" id="' + ID + '" onclick="' + Function + '" name="' + ID + '" class="menubutton" title="' + Title + '" onmouseover=this.className="menubuttonHOVER" onmouseout=this.className="menubutton">';
+		HTML += '<img src="/images/' + Image + '" border="0" alt="' + Title + '" title="' + Title + '" align="middle" id="' + ID + 'ENABLE">';
+		HTML += '<img src="/images/' + Image + '" border="0" alt="' + Title + '" title="' + Title + '" align="middle" style="display:none;filter:alpha(opacity=60);-moz-opacity:60%;" id="' + ID + 'DISABLE">';
+		HTML += '</td>';
+		HTML += '</tr>';
+		HTML += '</table>';
+		HTML += '<!--end button-->';
+		
+		return HTML;
+	}
+
+	function WriteButtonSmall(Image, Title, Function, ID)
+	{
+		var HTML = "";
+		
+		HTML += '<!--button ' + ID + ' -->';
+		HTML += '<table valign="middle" align="center" border="0" cellspacing="0" cellpadding="0" ID="Table2">';
+		HTML += '<tr>';
+		HTML += '<td align="center" valign="middle" id="' + ID + '" onclick="' + Function + '" name="' + ID + '" class="menubuttonsmall" title="' + Title + '" onmouseover=this.className="menubuttonsmallHOVER" onmouseout=this.className="menubuttonsmall">';
+		HTML += '<img src="/images/' + Image + '" border="0" alt="' + Title + '" title="' + Title + '" align="middle" id="' + ID + 'ENABLE">';
+		HTML += '<img src="/images/' + Image + '" border="0" alt="' + Title + '" title="' + Title + '" align="middle" style="display:none;filter:alpha(opacity=60);-moz-opacity:60%;" id="' + ID + 'DISABLE">';
+		HTML += '</td>';
+		HTML += '</tr>';
+		HTML += '</table>';
+		HTML += '<!--end button-->';
+		
+		return HTML;
+	}
+</script>
+
+<script language="JavaScript" src="stack_menu.js"></script>
+<script language="JavaScript" src="jquery-1.4.2.min.js"></script>
+<script language="JavaScript">
+	stack_menu.checkConcurrency = 0;
+  stack_menu.appToken = 'T40~BIG~1011';
+    with(stack_menu){
+    top = 0;
+    left = 200;
+    
+		with(add_item()){
+		text = 'Home';
+    processcode = 'Home';
+		link = './homepage/myHome_system.asp';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Home';
+          processcode = 'Home';
+					link = './homepage/myHome_system.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Monarch';
+          processcode = 'Monarch';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Portal';
+            processcode = 'Portal';
+						link = '../facility/portal';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Dashboard / Logout';
+          processcode = 'Logout';
+					link = 'Logoff.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'My Profile';
+          processcode = 'My Profile';
+					link = 'admin/MyProfile.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'My Session';
+          processcode = 'My Session';
+					link = 'admin/MyProfile.asp?mode=NOSAVE';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Site Explorer';
+          processcode = 'Site Explorer';
+					link = './site_explorer/SITEEXP_explorer.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Report Schedule';
+          processcode = 'Report Schedule';
+					link = './ReportWriter/MySchedule.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Change Password';
+          processcode = 'Change Password';
+					link = 'ChangePWTranslated.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Steve Test';
+          processcode = 'Steve Test';
+					link = 'invoice_test.asp';
+					menuArea = '';
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Work Management';
+    processcode = 'Facility Center';
+		link = 'Marketing/BIGWork.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Search';
+          processcode = 'Search';
+					link = 'WorkMgmt/cc/TX_Search_Jobticket.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Work';
+          processcode = 'Work';
+					link = 'blankpage.htm';
+					menuArea = '1';
+				
+					with(add_item()){
+						text = 'Create';
+            processcode = 'Create';
+						link = 'WorkMgmt/cc/TX_Create_JobTicket_Main.asp?NextPage=/WorkMgmt/CC/TX_Dispatch_Main.asp';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'Dispatch';
+            processcode = 'Dispatch';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=DISPATCH';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'Batch Print';
+            processcode = 'Batch Print';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=BATCH';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'Tenant Billing Rpt';
+            processcode = 'Tenant Billing Rpt';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=TENANTBILLING';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'Portal';
+            processcode = 'Portal';
+						link = 'WorkMgmt/Portal/portal_Navigation.asp';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'Portal Admin';
+            processcode = 'Portal Admin';
+						link = 'WorkMgmt/Portal/portal_admin.asp';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'Symantec Portal';
+            processcode = 'Symantec Portal';
+						link = 'WorkMgmt/Portal/CustomPortals/Symantec/portal_Navigation.asp';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'RoyalSun Portal';
+            processcode = 'RoyalSun Portal';
+						link = 'WorkMgmt/Portal/CustomPortals/RoyalSun/portal_Navigation.asp';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'NVidia Portal';
+            processcode = 'NVidia Portal';
+						link = 'WorkMgmt/Portal/CustomPortals/Nvidia/portal_Navigation.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Charge-back Report';
+            processcode = 'Charge-back Report';
+						link = 'WorkMgmt/cc/tx_Chargeback_menu.asp';
+						menuArea = '1';
+					}
+				
+					with(add_item()){
+						text = 'Yardi Feed';
+            processcode = 'Yardi Feed';
+						link = 'WorkMgmt/CC/TX_PGE_Yardi_Feed.aspx';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Timesheet';
+            processcode = 'Timesheet';
+						link = 'WorkMgmt/CC/tx_timesheet.asp';
+						menuArea = '1';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Moves';
+          processcode = 'Moves';
+					link = 'blankpage.htm';
+					menuArea = '2';
+				
+					with(add_item()){
+						text = 'Create';
+            processcode = 'Create';
+						link = 'Project/moves/move_create.asp';
+						menuArea = '2';
+					}
+				
+					with(add_item()){
+						text = 'Drafts';
+            processcode = 'Drafts';
+						link = 'Project/moves/move_pending.asp';
+						menuArea = '2';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'Project/moves/move_reports.asp?Rpt_System=MOVES';
+						menuArea = '2';
+					}
+				
+					with(add_item()){
+						text = 'Approvals';
+            processcode = 'Approvals';
+						link = 'Project/moves/move_pending.asp?type=approvals';
+						menuArea = '2';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Maintenance Mgmt';
+          processcode = 'Maintenance Mgmt';
+					link = 'blankpage.htm';
+					menuArea = '3';
+				
+					with(add_item()){
+						text = 'Equipment';
+            processcode = 'Equipment';
+						link = 'WorkMgmt/MM/mm_equipment.asp?page=mm_equip_list.asp';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'Service Contracts';
+            processcode = 'Service Contracts';
+						link = 'WorkMgmt/MM/mm_service_contract.asp?PAGE=mm_view_service_contract.asp';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'Job Plans';
+            processcode = 'Job Plans';
+						link = 'WorkMgmt/MM/mm_jobplan.asp?page=mm_view_jobplan.asp';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'JobPlan Group';
+            processcode = 'Jobplan Group';
+						link = 'WorkMgmt/MM/mm_asset_jobplan_group.asp?PAGE=mm_view_asset_jobplan_group.asp&amp;MODAL=false';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'Equipment Job Plan';
+            processcode = 'Equipment Jobplan';
+						link = 'WorkMgmt/MM/mm_jobplan.asp?PAGE=MM_VIEW_ASSET_JOBPLAN.ASP';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'WorkMgmt/MM/mm_reports.asp';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'Schedule';
+            processcode = 'Schedule';
+						link = 'WorkMgmt/MM/MM_Schedule.asp';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'Locational Certs';
+            processcode = 'Locational Certs';
+						link = 'WorkMgmt/MM/mm_loccert_search.asp';
+						menuArea = '3';
+					}
+				
+					with(add_item()){
+						text = 'PM Forecast';
+            processcode = 'PM Forecast';
+						link = 'WorkMgmt/MM/MM_Forecast_PM_Jobplan.asp';
+						menuArea = '3';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Resource Booking';
+          processcode = 'Resource Booking';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Create';
+            processcode = 'Create';
+						link = 'WorkMgmt/CRB/rb_create_main.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'WorkMgmt/CRB/rb_search_main.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Admin';
+            processcode = 'Admin';
+						link = 'WorkMgmt/CRB/rb_admin_main.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Resource Uti';
+            processcode = 'Resource Uti';
+						link = 'WorkMgmt/CRB/rb_resource_utilization_report_search.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Inventory';
+          processcode = 'Inventory';
+					link = 'blankpage.htm';
+					menuArea = '4';
+				
+					with(add_item()){
+						text = 'Material Type';
+            processcode = 'Material Type';
+						link = 'WorkMgmt/Inventory/ivy_cat.asp?ModuleName=WM';
+						menuArea = '4';
+					}
+				
+					with(add_item()){
+						text = 'Parts List';
+            processcode = 'Parts List';
+						link = 'WorkMgmt/Inventory/ivy_part.asp?ModuleName=WM';
+						menuArea = '4';
+					}
+				
+					with(add_item()){
+						text = 'Inventory';
+            processcode = 'Inventory';
+						link = 'WorkMgmt/Inventory/ivy_inventory.asp?ModuleName=WM';
+						menuArea = '4';
+					}
+				
+					with(add_item()){
+						text = 'Receipt Entry';
+            processcode = 'Receipt Entry';
+						link = 'WorkMgmt/Inventory/ivy_receipt_entry.asp?ModuleName=WM';
+						menuArea = '4';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Kiosk';
+          processcode = 'Kiosk';
+					link = 'WorkMgmt/Kiosk/ccw_InitBrowser.htm';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Surveys';
+          processcode = 'NAV_SYSTEM-57052';
+					link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=SURVEY';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Energy Tracking';
+          processcode = 'Energy Tracking';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'Admin/ET/ET_Bldg_Search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'Admin/ET/ET_Bldg_Reports_Search.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Service Provider';
+          processcode = 'Service Provider';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Dispatch Matrix';
+            processcode = 'Dispatch Matrix';
+						link = 'Admin/PVDR/pvdr_search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Copy Dispatch Matrix';
+            processcode = 'Copy Dispatch Matrix';
+						link = 'Admin/PVDR/pvdr_copy_building_matrix.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reassign SP Matrix';
+            processcode = 'Reassign SP Matrix';
+						link = 'Admin/PVDR/pvdr_reassign_service_provider_matrix.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Edit Provider';
+            processcode = 'Edit Provider';
+						link = 'WorkMgmt/MM/mm_employee.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Create Provider';
+            processcode = 'Create Provider';
+						link = 'WorkMgmt/MM/mm_employee_create.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Approver Matrix';
+            processcode = 'Approver Matrix';
+						link = 'Admin/PVDR/pvdr_approver_matrix.aspx';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Certs of Insurance';
+            processcode = 'Certs of Insurance';
+						link = 'WorkMgmt/MM/mm_insurance_list.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Admin';
+          processcode = 'Admin';
+					link = 'WorkMgmt/Admin/default.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Reports';
+          processcode = 'Reports';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Work';
+            processcode = 'Work';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=REPORTS';
+						menuArea = '5';
+					}
+				
+					with(add_item()){
+						text = 'Maint. Management';
+            processcode = 'Maint. Management';
+						link = 'WorkMgmt/MM/mm_reports.asp';
+						menuArea = '6';
+					}
+				
+					with(add_item()){
+						text = 'Inventory';
+            processcode = 'Inventory';
+						link = 'WorkMgmt/Inventory/ivy_reports.asp?ModuleName=WM';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Financial';
+            processcode = 'Financial';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=FINANCIALREPORTS';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Charge-back';
+            processcode = 'Charge-back';
+						link = 'WorkMgmt/cc/tx_Chargeback_menu.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Self Billing Report';
+            processcode = 'Self Billing Report';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=REQUISITIONREPORT';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Accruals Report';
+            processcode = 'Accruals Report';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=ACCRUALSREPORT';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Services Billing Rpt';
+            processcode = 'Services Billing Rpt';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=FINANCIALREPORTS&amp;targetrpt=tx_svc_billing_rpt.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Tenant Billing';
+            processcode = 'Tenant Billing';
+						link = 'WorkMgmt/cc/TX_Search_Jobticket.asp?ReportType=TENANTBILLING';
+						menuArea = '';
+					}
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Portfolio';
+    processcode = 'Portfolio Center';
+		link = 'Marketing/BIGLease.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Building';
+          processcode = 'Building';
+					link = 'Portfolio/lease/BuildingSearch.asp';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'Portfolio/lease/BuildingSearch.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Strategy Center';
+          processcode = 'Strategy Center';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'Strategy/SC_Bldg_Search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Admin';
+            processcode = 'Admin';
+						link = 'Strategy/Admin/SC_Admin.aspx';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Property';
+          processcode = 'Property';
+					link = 'PORTFOLIO/LEASE/PR_SEARCHPROP.ASP?MENU=SRCH';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'PORTFOLIO/LEASE/PR_SEARCHPROP.ASP?MENU=SRCH';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Doc Maint';
+            processcode = 'Doc Maint';
+						link = 'Portfolio/lease/propertydocmaint/docMaint.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'PORTFOLIO/LEASE/PR_SEARCHPROP.ASP?MENU=RPT';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Tenant Stacking Plan';
+          processcode = 'Tenant Stacking Plan';
+					link = 'portfolio/space/sm_tnstack_srch.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Lease';
+          processcode = 'Lease';
+					link = 'Portfolio/lease/leaseinvsrch.asp';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'Portfolio/lease/leaseinvsrch.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'Portfolio/lease/ls_reports.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Notify';
+            processcode = 'Notify';
+						link = 'Portfolio/lease/notify_mod.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Contact Admin';
+            processcode = 'Contact Admin';
+						link = 'Portfolio/lease/LS_Contact_Admin.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Space to Lease';
+            processcode = 'Space to Lease';
+						link = 'Portfolio/Lease/SpaceToLease.aspx';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Invoicing';
+          processcode = 'Invoicing';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Create Non-Recurring';
+            processcode = 'Create Non-Recurring';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=NONRECURRING';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Create Recurring';
+            processcode = 'Create Recurring';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=RECURRING';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Modify/View';
+            processcode = 'Modify/View';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=MODIFY';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Update Allocations';
+            processcode = 'Update Allocations';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=UPDATEINVOICEALLOCATIONS';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Send for Approval';
+            processcode = 'Send for Approval';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=APPROVAL';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Approve';
+            processcode = 'Approve';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=APPROVE';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Cash Receipts';
+            processcode = 'Cash Receipts';
+						link = 'Portfolio/Lease/CashReceipts/Default.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=REPORTS';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Invoice Reversals';
+            processcode = 'Invoice Reversals';
+						link = 'Portfolio/lease/INV_InvoiceReversal.aspx';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'NAV_SYSTEM-1568908';
+            processcode = 'NAV_SYSTEM-1568908';
+						link = 'Portfolio/Lease/CashReceipts/Mockup/Start.htm';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'External Feeds';
+          processcode = 'External Feeds';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Send for Payment';
+            processcode = 'Send for Payment';
+						link = 'Portfolio/Lease/InvSearch.asp?PageType=PAYMENT';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Receive File Comcast';
+            processcode = 'Receive File Comcast';
+						link = 'portfolio/lease/invoicemanager/ReceiveFileComcast.aspx';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Admin';
+          processcode = 'Admin';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Multi-Lease Utility';
+            processcode = 'Multi-Lease Utility';
+						link = 'Portfolio/lease/maint/MultiLFI_Step1.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Property';
+            processcode = 'Property';
+						link = 'PORTFOLIO/LEASE/PR_SEARCHPROP.ASP?MENU=ADMIN&amp;FORM=PROPERTY';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Building';
+            processcode = 'Building';
+						link = 'PORTFOLIO/LEASE/PR_SEARCHPROP.ASP?MENU=ADMIN&amp;FORM=BUILDING';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Lease Groups';
+            processcode = 'Lease Groups';
+						link = 'Portfolio/lease/maint/Forms.asp?form=LS_group';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Expense Items';
+            processcode = 'Expense Items';
+						link = 'Portfolio/lease/maint/Forms.asp?form=ExpenseItems';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Division Entry';
+            processcode = 'Division Entry';
+						link = 'Portfolio/lease/maint/popups/DivisionEntries.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Property Doc Types';
+            processcode = 'Property Doc Types';
+						link = 'Portfolio/lease/PropertyDocMaint/PR_DocType.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Option Types Test';
+            processcode = 'Option Types Test';
+						link = 'Portfolio/Lease/Maint/editOptionTypes.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Contacts Admin';
+            processcode = 'Contacts Admin';
+						link = 'PORTFOLIO/LEASE/LS_CONTACT_ADMIN.ASP';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Admin2';
+          processcode = 'Admin2';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Snapshots';
+            processcode = 'Snapshots';
+						link = 'Project/TakeSnapshot.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Space &amp; Occupancy';
+    processcode = 'Space &amp; Occupancy';
+		link = 'Marketing/BIGSpace.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'End Of Month';
+          processcode = 'End Of Month';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Drawing Checkout';
+            processcode = 'Drawing Checkout';
+						link = 'Portfolio/Space/sm_checkout_status.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Process';
+            processcode = 'Process';
+						link = 'Portfolio/Space/sm_batch_eom.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Status Report';
+            processcode = 'Status Report';
+						link = 'Portfolio/Space/sm_batch_eom_status.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Property Search';
+          processcode = 'Property Search';
+					link = 'Portfolio/Space/SpaceWeb/sw_bldg_srch.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Space Entry Search';
+          processcode = 'Space Entry Search';
+					link = 'Portfolio/Space/SpaceWeb/Space_Entry_Search.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Reports';
+          processcode = 'Reports';
+					link = 'portfolio/space/sm_reports.asp?Rpt_System=SPACE';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Summary Report';
+          processcode = 'Summary Report';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Report';
+            processcode = 'Report';
+						link = 'portfolio/space/sm_summaryreport_report.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Data Entry';
+            processcode = 'Data Entry';
+						link = 'portfolio/space/sm_summaryreport_data_entry.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Admin';
+            processcode = 'Admin';
+						link = 'portfolio/space/sm_summaryreport_admin.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Moves';
+          processcode = 'Moves';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Create';
+            processcode = 'Create';
+						link = 'Project/moves/move_create.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Drafts';
+            processcode = 'Drafts';
+						link = 'Project/moves/move_pending.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'Project/moves/move_reports.asp?Rpt_System=MOVES';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Approve';
+            processcode = 'Approve';
+						link = 'Project/moves/move_pending.asp?type=approvals';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Direct Move';
+            processcode = 'Direct Move';
+						link = 'Project/Moves/move_create.asp?CreateLongMove=false';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Move Management';
+          processcode = 'Move Management';
+					link = 'Portfolio/moves/move_search.asp';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Create';
+            processcode = 'Create';
+						link = 'Portfolio/moves/move_create.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'Portfolio/moves/move_search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'Portfolio/moves/move_reports.asp?Rpt_System=MOVES';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Approvals';
+            processcode = 'Approvals';
+						link = 'Portfolio/moves/move_search.asp?type=approvals';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Inventory';
+          processcode = 'Inventory';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Parts List';
+            processcode = 'Parts List';
+						link = 'workmgmt/inventory/ivy_part.asp?ModuleName=SP';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Inventory';
+            processcode = 'Inventory';
+						link = 'workmgmt/inventory/ivy_inventory.asp?ModuleName=SP';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Receipt Entry';
+            processcode = 'Receipt Entry';
+						link = 'workmgmt/inventory/ivy_receipt_entry.asp?ModuleName=SP';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'workmgmt/inventory/ivy_reports.asp?ModuleName=SP';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Admin';
+          processcode = 'Admin';
+					link = 'Portfolio/Space/Admin/default.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Batch';
+          processcode = 'Batch';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Update';
+            processcode = 'Update';
+						link = 'Portfolio/Space/sm_batch_update.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Report';
+            processcode = 'Report';
+						link = 'Portfolio/Space/sm_batch_report.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Calculate';
+            processcode = 'Calculate';
+						link = 'Portfolio/Space/sm_batch_calc.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Project Tracking';
+    processcode = 'Project Center';
+		link = 'Marketing/BIGTransactions.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Project Initiation';
+          processcode = 'Project Initiation';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'New Initiation';
+            processcode = 'New Proj. Initiation';
+						link = 'Project/WO_ProjectInitiation.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Proj. In. Search';
+						link = 'Project/WO_ProjectInitiationSearch.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'New Project';
+            processcode = 'New Project';
+						link = 'Project/WO_TemplateSearch.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Project Search';
+          processcode = 'Project Search';
+					link = 'Project/WO_ProjectSearch.asp';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Project Search';
+            processcode = 'Project Search';
+						link = 'Project/WO_ProjectSearch.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'My Worklist Tasks';
+            processcode = 'My Worklist Tasks';
+						link = 'Project/WO_ProjectWorklistTaskUpdater.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Reports';
+          processcode = 'Reports';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'Project/reports/WO_Report_search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Man Power';
+            processcode = 'Man Power';
+						link = 'Project/REPORTS/WO_ManPowerGanttChart.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Jurisdiction Summary';
+            processcode = 'Jurisdiction Summary';
+						link = 'project/reports/WO_Report_Jurisdiction_Summary_Search.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Administration';
+          processcode = 'Administration';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Template Admin';
+            processcode = 'Template Admin';
+						link = 'Project/WO_TemplateSearch.asp?UseTemplate=Y&amp;Admin=Y';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Close Out Attributes';
+            processcode = 'Close Out Attributes';
+						link = 'Project/WO_ProjectAdminAttributes.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Project Survey';
+            processcode = 'Project Survey';
+						link = 'Admin/EditPages/Survey.aspx?S=PMPRJ';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'RFP Groups';
+            processcode = 'RFP Groups';
+						link = 'Project/WO_RFPGroupaAdmin.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Project Attributes';
+            processcode = 'Project Attributes';
+						link = 'Project/WO_project_attribute_admin.asp?isadmin=true';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Project Types';
+            processcode = 'Project Types';
+						link = 'Project/WO_ProjectAdminTypes.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Annual Budgets';
+            processcode = 'Annual Budgets';
+						link = 'project/WO_Annualbudget_Admin.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Commissioning';
+            processcode = 'Commissioning';
+						link = 'admin/commissioning/commissioninglist.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Miscellaneous';
+            processcode = 'Miscellaneous';
+						link = 'ADMIN/PROJECTS/Admin_SelectPage.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Financials';
+    processcode = 'Financials';
+		link = 'blankpage.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Purchasing';
+          processcode = 'Purchasing';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'Project/Commitments/PUR_Requisition_Search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'New Requisition';
+            processcode = 'New Requisition';
+						link = 'Project/Commitments/PUR_Requisition_Detail.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Purchase Orders';
+            processcode = 'Purchase Orders';
+						link = 'Project/Commitments/PUR_PO_Search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'BOM PO Batch';
+            processcode = 'BOM PO Batch';
+						link = 'project/commitments/PUR_REQ_MassApprove_Search.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Invoicing';
+          processcode = 'Invoicing';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'Project/Commitments/PUR_Invoice_Search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'New Invoice';
+            processcode = 'New Invoice';
+						link = 'Project/Commitments/PUR_Invoice_Detail.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'New RE Invoice';
+            processcode = 'New RE Invoice';
+						link = 'Project/Commitments/PUR_Invoice_Detail.asp?module=ls';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'BOM Invoice Batch';
+            processcode = 'BOM Invoice Batch';
+						link = 'project/commitments/PUR_Invoice_MassApprove_Search.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Tools';
+          processcode = 'Tools';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Sets of Books';
+            processcode = 'Sets of Books';
+						link = 'Admin/LegalEntity/LE_LegalEntitySearch.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Cost Structure';
+            processcode = 'Cost Structure';
+						link = 'Project/WO_CSIAdmin.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Thresholds';
+            processcode = 'Thresholds';
+						link = 'Admin/Approvals/ThresholdList.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Vat Rates';
+            processcode = 'Vat Rates';
+						link = 'Admin/VatRates/VatRateList.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'UNSPSC Codes';
+            processcode = 'UNSPSC Codes';
+						link = 'Admin/UNSPSC/UnspscList.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Budget Admin';
+          processcode = 'Budget Admin';
+					link = 'Admin/budget/budget_admin.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Budget Reports';
+          processcode = 'Budget Reports';
+					link = 'Admin/budget/budget_reports.asp';
+					menuArea = '';
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Energy Tracking';
+    processcode = 'Green Center';
+		link = 'blankpage.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Search';
+          processcode = 'Search';
+					link = 'EnergyTracking/ET_Bldg_Search.asp?ModuleName=ET';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Reports';
+          processcode = 'Reports';
+					link = 'EnergyTracking/reports/ET_Reports.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Meters';
+          processcode = 'Meters';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'WorkMgmt/MM/mm_equipment.asp?module=et&amp;page=mm_equip_list.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Create';
+            processcode = 'Create';
+						link = 'WorkMgmt/MM/mm_add_equipment.asp?module=et';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Providers';
+          processcode = 'Providers';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Search';
+            processcode = 'Search';
+						link = 'EnergyTracking/Providers/ET_Search_Provider.aspx?clear=y';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Create';
+            processcode = 'Create';
+						link = 'EnergyTracking/Providers/ET_AddEdit_Provider.aspx';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Admin';
+          processcode = 'Admin';
+					link = 'EnergyTracking/Admin/ET_Admin.aspx';
+					menuArea = '';
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Admin';
+    processcode = 'Admin';
+		link = 'blankpage.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Menu Admin';
+          processcode = 'asdf`asdf  as`dfsad`';
+					link = 'Admin/MenuAdmin.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'System Admin';
+          processcode = 'System Admin';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Tables';
+            processcode = 'Tables';
+						link = 'Admin/SystemAdmin/default.aspx';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Admin Tools';
+          processcode = 'Admin Tools';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Table';
+            processcode = 'Table';
+						link = 'admin/default.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Dictionary Editor';
+            processcode = 'Dictionary Editor';
+						link = 'Admin/DictionaryEditor/editor_options.aspx';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Exchange Rate Admin';
+            processcode = 'Exchange Rate Admin';
+						link = 'admin/editpages/currency_admin.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Floors';
+            processcode = 'Floors';
+						link = 'Admin/floors_admin.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Report Schedule';
+            processcode = 'Report Schedule';
+						link = 'ReportWriter/AdminSchedule.aspx';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Home Page Components';
+            processcode = 'Home Page Components';
+						link = 'Admin/Homepage/ComponentsAdmin.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'People';
+            processcode = 'People';
+						link = 'Admin/People/peo_search.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Auditing';
+            processcode = 'Auditing';
+						link = 'Admin/Auditing/Audit_Search.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Access Groups';
+          processcode = 'Access Groups';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Work Management';
+            processcode = 'Work Management';
+						link = 'Admin/EditPages/Lease_Groups.asp?type=groups&amp;Group_Type=6';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Lease';
+            processcode = 'Lease';
+						link = 'admin/editpages/Lease_Groups.asp?type=groups';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Space &amp; Occupancy';
+            processcode = 'Space &amp; Occupancy';
+						link = 'Admin/EditPages/Lease_Groups.asp?type=groups&amp;Group_Type=8';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Projects';
+            processcode = 'Projects';
+						link = 'Admin/EditPages/Lease_Groups.asp?type=groups&amp;Group_Type=9';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Energy Tracking';
+            processcode = 'Energy Tracking';
+						link = 'Admin/EditPages/Lease_Groups.asp?type=groups&amp;Group_Type=11';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Locational';
+          processcode = 'Locational';
+					link = 'admin/location/loc_frameset.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Bulk Import';
+          processcode = 'Bulk Import';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Bulk Import';
+            processcode = 'Bulk Import';
+						link = 'admin/BulkImport/default.aspx';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Sequencer';
+            processcode = 'Sequencer';
+						link = 'admin/BulkImport/sequencer.aspx';
+						menuArea = '';
+					}
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Development';
+    processcode = 'Development';
+		link = 'blankpage.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'LSReportWriterEdit';
+          processcode = 'LSReportWriterEdit';
+					link = 'Toolkit/ReportWriter/LeaseReportWriterEdit.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'WMReportWriterEdit';
+          processcode = 'WMReportWriterEdit';
+					link = 'Toolkit/ReportWriter/WMReportWriterEdit.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'InvReportWriterEdit';
+          processcode = 'InvReportWriterEdit';
+					link = 'Toolkit/ReportWriter/InvoiceReportWriterEdit.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'ProjReportWriterEdit';
+          processcode = 'ProjReportWriterEdit';
+					link = 'Toolkit/ReportWriter/ProjectReportWriterEdit.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Work Management';
+          processcode = 'Work Mgmt';
+					link = 'Toolkit/WorkMgmt/Default.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Rollouts';
+          processcode = 'Rollouts';
+					link = 'Toolkit/Rollouts/Default.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'SQL Logs';
+          processcode = 'SQL Logs';
+					link = 'Toolkit/SQLLogs/default.asp';
+					menuArea = '';
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'QA';
+    processcode = 'QA';
+		link = 'blankpage.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'Submit QA';
+          processcode = 'Submit QA';
+					link = 'qa/wrrollouts.aspx';
+					menuArea = '';
+				
+					with(add_item()){
+						text = '3.5 Rollout';
+            processcode = '3.5 Rollout';
+						link = 'QA/rollout/default.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = '4.0 Rollout';
+            processcode = '4.0 Rollout';
+						link = 'QA/rollout40/default.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Citi Rollout';
+            processcode = 'Citi Rollout';
+						link = 'QA/rolloutCiti/default.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Citi Rollout Notes';
+            processcode = 'Citi Rollout Notes';
+						link = 'QA/CitiRollouts/default.asp';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'BIG Rollout Notes';
+            processcode = 'BIG Rollout Notes';
+						link = 'QA/BIGRollouts/default.asp';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Reports';
+          processcode = 'Reports';
+					link = 'qa/qareports.aspx';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Ratings';
+            processcode = 'Ratings';
+						link = 'qa/qa_reports/qa_rating_report.aspx';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'Email';
+          processcode = 'Email';
+					link = 'qa/qaemaildetails.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Stacking Plan';
+          processcode = 'Stacking Plan';
+					link = 'qa/StackingPlan.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Triage';
+          processcode = 'Triage';
+					link = 'qa/triage.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'View Buckets';
+          processcode = 'View Buckets';
+					link = 'qa/viewbuckets.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'My Buckets';
+          processcode = 'My Buckets';
+					link = 'qa/viewbuckets.aspx?showmybucketsonly=true';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Watch Lists';
+          processcode = 'Watch Lists';
+					link = 'qa/viewwatchlists.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Token Request';
+          processcode = 'Token Request';
+					link = 'qa/TokenRequest.aspx';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'PM Sheet';
+          processcode = 'PM Sheet';
+					link = 'qa/PMSheet.aspx';
+					menuArea = '';
+				
+				}
+			
+		}
+	
+		with(add_item()){
+		text = 'Testing';
+    processcode = 'Testing';
+		link = 'blankpage.htm';
+		menuArea = '';
+			
+				with(add_item()){
+					text = 'NAV_SYSTEM-1570957';
+          processcode = 'NAV_SYSTEM-1570957';
+					link = 'common/help/bighelp.asp';
+					menuArea = '';
+				
+				}
+			
+				with(add_item()){
+					text = 'Emergency Center';
+          processcode = 'Emergency Center';
+					link = 'blankpage.htm';
+					menuArea = '';
+				
+					with(add_item()){
+						text = 'Create Notification';
+            processcode = 'Create Notification';
+						link = 'EmergencyCenter/NotificationMain.aspx?category=CREATE';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Search Notifications';
+            processcode = 'Search Notifications';
+						link = 'EmergencyCenter/NotificationMain.aspx?category=SEARCH';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Reports';
+            processcode = 'Reports';
+						link = 'EmergencyCenter/NotificationReports.aspx?mode=SEARCH';
+						menuArea = '';
+					}
+				
+					with(add_item()){
+						text = 'Administration';
+            processcode = 'Administration';
+						link = 'EmergencyCenter/ECAdmin.aspx?category=';
+						menuArea = '';
+					}
+				
+				}
+			
+				with(add_item()){
+					text = 'TestPage';
+          processcode = 'TestPage';
+					link = 'TestPage.aspx';
+					menuArea = '';
+				
+				}
+			
+		}
+	
+    }
+
+    
+    getTranslatedMonths();
+    getTranslatedDays();
+
+    
+    getShortTranslatedMonths();
+    getShortTranslatedDays();
+  </script>
+<style type="text/css">
+			A {text-decoration: none}
+			.med {color: white; font: bold;}
+			.medactive {color: gold; font: bold;}
+			.top {color: black}
+			.topactive {color: white}
+			.bot {color: black}
+			.clsMenu1Font{font-family:arial;font-size:10pt;text-decoration:none;color:000000;font-weight:bold;}
+			.clsMenu1SelFont{font-family:arial;font-size:10pt;text-decoration:none;color:ffcc33;font-weight:bold;}
+			.clsMenu2Font{font-family:arial;font-size:9pt;text-decoration:none;color:silver;font-weight:bold;}
+			.clsMenu2SelFont{font-family:arial;font-size:9pt;text-decoration:none;color:ffcc33;font-weight:bold;}
+			.clsMenu3Font{font-family:arial;font-size:9pt;text-decoration:none;color:000000;}
+			.clsObject{position:absolute;top:-1;left:0;}
+	</style>
+</head>
+<body topmargin="0" leftmargin="0" onload="stack_menu.build()">
+<div id="stackMenu" style="position: absolute; top: 0px; left: 150px; z-index: 1;"><table width="100%" cellpadding="0" cellspacing="0" border="0" background="Level1_Flat_Middle.gif" class="menu_bar" name="menu_bar"><tbody><tr><td><table align="left" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,0,'');" class="clsMenu1Font">Home</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Select_Left.gif"></td><td background="Level1_Select_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,1,'');" class="clsMenu1SelFont">Work Management</a></td><td><img src="Level1_Select_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,2,'');" class="clsMenu1Font">Portfolio</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,3,'');" class="clsMenu1Font">Space &amp; Occupancy</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,4,'');" class="clsMenu1Font">Project Tracking</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,5,'');" class="clsMenu1Font">Financials</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,6,'');" class="clsMenu1Font">Energy Tracking</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,7,'');" class="clsMenu1Font">Admin</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,8,'');" class="clsMenu1Font">Development</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,9,'');" class="clsMenu1Font">QA</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,10,'');" class="clsMenu1Font">Testing</a></td><td><img src="Level1_Flat_Right.gif"></td></tr></tbody></table></td></tr><tr><td background="Level2_greenbg.gif"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td align="left" valign="bottom"><img src="Level2_leftshadow.gif"></td><td width="100%"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,0,'');" class="clsMenu2SelFont">Search</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,1,'1');" class="clsMenu2Font">Work</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,2,'2');" class="clsMenu2Font">Moves</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,3,'3');" class="clsMenu2Font">Maintenance Mgmt</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,4,'');" class="clsMenu2Font">Resource Booking</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,5,'4');" class="clsMenu2Font">Inventory</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,6,'');" class="clsMenu2Font">Kiosk</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,7,'');" class="clsMenu2Font">Surveys</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,8,'');" class="clsMenu2Font">Energy Tracking</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,9,'');" class="clsMenu2Font">Service Provider</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,10,'');" class="clsMenu2Font">Admin</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,11,'');" class="clsMenu2Font">Reports</a><img src="spacer.gif" width="15" height="1"></td></tr></tbody></table></td><td align="right" valign="bottom"><img src="Level2_rightborder.gif"></td></tr></tbody></table></td></tr><tr><td background="Level3_graybg.gif"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td align="left"><img src="Level3_leftshadow.gif"></td><td width="100%"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr></tr></tbody></table></td><td align="right" valign="bottom"><img src="Level3_rightborder.gif"></td></tr></tbody></table></td></tr></tbody></table></div>
+<div id="stackMenuBuffer" style="position: absolute; top: 0px; left: 150px; z-index: 0;"><table width="100%" cellpadding="0" cellspacing="0" border="0" background="Level1_Flat_Middle.gif" class="menu_bar" name="menu_bar"><tbody><tr><td><table align="left" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,0,'');" class="clsMenu1Font">Home</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Select_Left.gif"></td><td background="Level1_Select_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,1,'');" class="clsMenu1SelFont">Work Management</a></td><td><img src="Level1_Select_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,2,'');" class="clsMenu1Font">Portfolio</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,3,'');" class="clsMenu1Font">Space &amp; Occupancy</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,4,'');" class="clsMenu1Font">Project Tracking</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,5,'');" class="clsMenu1Font">Financials</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,6,'');" class="clsMenu1Font">Energy Tracking</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,7,'');" class="clsMenu1Font">Admin</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,8,'');" class="clsMenu1Font">Development</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,9,'');" class="clsMenu1Font">QA</a></td><td><img src="Level1_Flat_Right.gif"></td><td><img src="Level1_Flat_Left.gif"></td><td background="Level1_Flat_Middle.gif" align="center"><a href="JavaScript:set_stack_menu_select(1,10,'');" class="clsMenu1Font">Testing</a></td><td><img src="Level1_Flat_Right.gif"></td></tr></tbody></table></td></tr><tr><td background="Level2_greenbg.gif"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td align="left" valign="bottom"><img src="Level2_leftshadow.gif"></td><td width="100%"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,0,'');" class="clsMenu2Font">Search</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,1,'1');" class="clsMenu2Font">Work</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,2,'2');" class="clsMenu2Font">Moves</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,3,'3');" class="clsMenu2Font">Maintenance Mgmt</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,4,'');" class="clsMenu2Font">Resource Booking</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,5,'4');" class="clsMenu2Font">Inventory</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,6,'');" class="clsMenu2Font">Kiosk</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,7,'');" class="clsMenu2Font">Surveys</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,8,'');" class="clsMenu2Font">Energy Tracking</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,9,'');" class="clsMenu2Font">Service Provider</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,10,'');" class="clsMenu2Font">Admin</a><img src="spacer.gif" width="15" height="1"></td><td valign="top" align="center" nowrap=""><img src="spacer.gif" width="20" height="1"><a href="JavaScript:set_stack_menu_select(2,11,'');" class="clsMenu2Font">Reports</a><img src="spacer.gif" width="15" height="1"></td></tr></tbody></table></td><td align="right" valign="bottom"><img src="Level2_rightborder.gif"></td></tr></tbody></table></td></tr><tr><td background="Level3_graybg.gif"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tbody><tr><td align="left"><img src="Level3_leftshadow.gif"></td><td width="100%"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><td width="100%"><img src="spacer.gif"></td></tr></tbody></table></td><td align="right" valign="bottom"><img src="Level3_rightborder.gif"></td></tr></tbody></table></td></tr></tbody></table></div>
+<div id="flashObject" class="clsObject">
+<img src="TEST40_DEVL.JPG">
+</div>
+
+
+<script type="text/javascript" language="javascript" src="clsulinkcollection.js"></script>
+<!--beg userMenu Link code--><script type="text/javascript" language="javascript"></script><!--end userMenu Link code--><font size="1"><br>Time elapsed: 0.359375<br>SQL Time elapsed: 0.015625 (4.35%)<br>Page name is: /WEB01/defaultxml.asp<br>VSS Version of this page is: <br>Querystring: <br>Form: <br>Translations made: 258<br>Time to translate: 0.125 (34.78%)<br>GetSessionInfo Count: 306<br>SetSessionInfo Count: 0<br>GetStateData Count: 0<br></font></body></html>

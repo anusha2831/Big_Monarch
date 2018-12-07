@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BIG MONARCH</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet" >
+<!-- Loads the bootstrap css -->
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<!-- Loads the bootsrap theme css -->
+<link rel="stylesheet" href="css/style.css"/>
+<!--<link href="css/kendo.common.min.css" rel="stylesheet" />
+<link href="css/kendo.default.min.css" rel="stylesheet" />-->
+<!--<link href="css/kendo.dataviz.min.css" rel="stylesheet" />
+    <link href="css/kendo.dataviz.default.min.css" rel="stylesheet" />-->
+<link rel="stylesheet" type="text/css" href="css/big.bootstrap.css">
+  <style>
+  #workreq-map{margin:20px 50px; width:700px;height:500px;}
+  </style>
+   
+</head>
+<body >
+    <form id="form1">
+    <br />
+    <br />
+    <div id="workreq-map" >
+    </div>
+    </form>
+     <script src="js/jquery-1.10.2.js"></script>
+ 
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.10&sensor=false&.js"></script>
+
+    <script type="text/javascript" src="http://www.google.com/jsapi?.js"></script>
+<script src="js/markerwithlabel.js"></script>
+
+    <script>
+     var map, marker1, marker2;
+
+    function myMarker(options) {
+        if (!options.labelAnchor) {
+            options.labelAnchor = new google.maps.Point(10, 10);
+        }
+        options.map = map;
+        return new MarkerWithLabel(options);
+    }
+
+
+    function initialize(zoom1) {
+		
+		
+        var pos_center = new google.maps.LatLng(34.8000, -92.2000)
+        var pos1 = new google.maps.LatLng(33.4493151, -112.0738464)
+        var pos2 = new google.maps.LatLng(41.8819, -87.6278)
+
+        var mapPoints = [{
+                position: pos1,
+                icon: " ",
+                labelClass: "map-label",
+                //draggable: true,
+                labelStyle: {
+                    opacity: 0.75
+                },
+                labelContent: "5"
+            }, {
+                position: pos2,
+                icon: " ",
+                labelClass: "map-label",
+                //draggable: true,
+                labelStyle: {
+                    opacity: 0.75
+                },
+                labelContent: "12"
+            }
+
+        ]
+        var mapOptions = {
+            center:pos_center,
+            zoom: zoom1,
+            styles: [{
+                featureType: 'water',
+                elementType: 'all',
+                stylers: [{
+                    hue: '#e9ebed'
+                }, {
+                    saturation: -78
+                }, {
+                    lightness: 67
+                }, {
+                    visibility: 'simplified'
+                }]
+            }, {
+                featureType: 'landscape',
+                elementType: 'all',
+                stylers: [{
+                    hue: '#ffffff'
+                }, {
+                    saturation: -100
+                }, {
+                    lightness: 100
+                }, {
+                    visibility: 'simplified'
+                }]
+            }, {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{
+                    hue: '#bbc0c4'
+                }, {
+                    saturation: -93
+                }, {
+                    lightness: 31
+                }, {
+                    visibility: 'simplified'
+                }]
+            }, {
+                featureType: 'poi',
+                elementType: 'all',
+                stylers: [{
+                    hue: '#ffffff'
+                }, {
+                    saturation: -100
+                }, {
+                    lightness: 100
+                }, {
+                    visibility: 'off'
+                }]
+            }, {
+                featureType: 'road.local',
+                elementType: 'geometry',
+                stylers: [{
+                    hue: '#e9ebed'
+                }, {
+                    saturation: -90
+                }, {
+                    lightness: -8
+                }, {
+                    visibility: 'simplified'
+                }]
+            }, {
+                featureType: 'transit',
+                elementType: 'all',
+                stylers: [{
+                    hue: '#e9ebed'
+                }, {
+                    saturation: 10
+                }, {
+                    lightness: 69
+                }, {
+                    visibility: 'on'
+                }]
+            }, {
+                featureType: 'administrative.locality',
+                elementType: 'all',
+                stylers: [{
+                    hue: '#2c2e33'
+                }, {
+                    saturation: 7
+                }, {
+                    lightness: 19
+                }, {
+                    visibility: 'on'
+                }]
+            }, {
+                featureType: 'road',
+                elementType: 'labels',
+                stylers: [{
+                    hue: '#bbc0c4'
+                }, {
+                    saturation: -93
+                }, {
+                    lightness: 31
+                }, {
+                    visibility: 'on'
+                }]
+            }, {
+                featureType: 'road.arterial',
+                elementType: 'labels',
+                stylers: [{
+                    hue: '#bbc0c4'
+                }, {
+                    saturation: -93
+                }, {
+                    lightness: -2
+                }, {
+                    visibility: 'simplified'
+                }]
+            }]
+
+
+
+        };
+		
+        map = new google.maps.Map(document.getElementById("workreq-map"),
+            mapOptions);
+
+		var contentString = '<div id="info-id-content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+      'sandstone rock formation in the southern part of the '+
+      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+      'south west of the nearest large town, Alice Springs; 450&#160;km</p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString,
+	  maxWidth: 200 
+  });
+        $(mapPoints).each(function(index, element) {
+            var marker = new myMarker(this);
+            google.maps.event.addListener(marker, 'click', function(event) {
+                $(".map-label").removeClass("active-marker");
+                $(event.target).addClass("active-marker");
+				infowindow.open(map,marker);
+               // $('.map-view').addClass("map-detail-open");
+                //$('.map-section').removeClass("width100")
+            });
+            google.maps.event.addListener(map, 'zoom_changed', function(e) {
+				
+            })
+        });
+
+    
+	}
+    google.maps.event.addDomListener(window, 'load', initialize(4));
+	
+    
+    </script>
+    
+</body>
+<!-- *********************** Body Section Ends ********************** -->
+</html>

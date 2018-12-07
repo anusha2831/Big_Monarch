@@ -1,0 +1,19 @@
+/* Override ui-grid styles */
+.ui-grid-top-panel{
+background:#193965 !important;
+color:#f2f2f2 !important;
+
+}
+
+.ui-grid-row-selected .ui-grid-cell {
+background-color: #d8eaf4 !important;
+}
+
+.ui-grid-row{
+background-color: #d8eaf4 !important;
+}
+
+.ui-grid-row:nth-child(even):hover .ui-grid-cell, 
+.ui-grid-row:nth-child(odd):hover .ui-grid-cell {
+background-color: transparent !important;
+}

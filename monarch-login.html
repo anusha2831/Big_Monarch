@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BIG MONARCH</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet" >
+<!-- Loads the bootstrap css -->
+<link href="css/bootstrap-theme.css" rel="stylesheet">
+<!-- Loads the bootsrap theme css -->
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/big.bootstrap.css">
+<link rel="stylesheet" href="css/big.kendo.css"/>
+   
+</head>
+<body>
+<div id="wrapper" class="wrapper fill">
+
+<header class="header-block"> 
+    <section class="col-xs-9 col-sm-5 logo-container" >
+      <a href="javascript:void(0);"><img src="images/logo.png" alt="logo" height="36px" class="logo visible-xs"/> <img src="images/logo.png" alt="logo" height="" class="logo hidden-xs pl10"/></a>
+      <div class="mobile-search hidden"> <a class="glyphicon glyphicon-search f20" title="Search" id="search-icon-xs" href="javascript:void(0);" ></a> </div>
+    </section>
+  </header>
+  <section class="col-xs-12 ">
+  <div class="row">
+    <section class="col-xs-12 col-sm-4 col-md-3 center-block login-wrap-monarch">
+  <form role="form">
+  <h4>Log On</h4>
+  <div class="form-group">
+    <label for="username">User ID</label>
+    <input type="text" class="form-control" id="m_login_email" placeholder="">
+  </div>
+   
+  <div class="form-group">
+    <label for="lbl_m_login_password">Password</label>
+    <input type="password" class="form-control" id="m_login_password" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="lbl_m_login_portal">Portal</label>
+    <input type="text" class="form-control" id="m_login_portal" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary login-btn ">Log On</button>
+  <div class="form-group pt20">
+   <a href="javascript:void(0);" class="mr10" id="recover-reset">Recover User ID or Password</a>
+  </div>
+  <div class="validation-alerts">
+
+    <p class="invalid-email  label-danger">User ID and Password combination is not valid</p>
+
+  </div>
+  
+</form>
+  </section>
+  
+  <section class="col-xs-12 col-sm-8 col-md-6 center-block recover-reset-monarch">
+  <div class="col-xs-12 col-sm-6 recover-id">
+  <form role="form">
+  <h4>Recover User ID</h4>
+
+  <div class="form-group">
+    <label for="m_newuser_email" class="required">Email Address</label>
+    <input type="email" class="form-control fix-width" id="exampleInputEmail1" value="user@bigcenter.com" placeholder="Email Address"> 
+    <label for="m_user_domain" class="required">Portal</label>
+    <input type="email" class="form-control fix-width" id="exampleInputEmail1" value="BIG" placeholder="Portal">  </div>
+   <div class="form-group hide">
+    <label for="" >Security Question</label>
+    <p>Lorem Ipsum dolar sit. this is the secutity question</p>
+  </div>
+  <div class="form-group hide">
+    <label for="security-answer" class="required">Answer</label>
+    <input type="text" class="form-control" id="security-answer" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary recover-submit-btn  mb10" >Submit</button>
+  <button type="submit" class="btn btn-primary recover-user-btn  mb10 hide" >Submit</button>
+	
+  <div class="validation-alerts">
+  <p class="invalid-email  label-danger">Enter valid email address</p>
+  <p class="invalid-email  label-success">Check your email to retrieve User ID</p>
+    <p class="invalid-email  label-danger">Incorrect answer</p>
+
+  </div>
+  
+</form>
+</div>
+ <div class="col-xs-12 col-sm-6 reset-pwd">
+  <form role="form">
+  <h4>Reset Password</h4>
+
+  <div class="form-group">
+    <label for="m_newuser_email" class="required">User ID</label>
+    <input type="email" class="form-control fix-width" id="exampleInputEmail1" value="t40" placeholder="User ID">
+        <label for="m_user_domain" class="required">Portal</label>
+    <input type="email" class="form-control fix-width" id="exampleInputEmail1" value="BIG" placeholder="Portal">
+  </div>
+   <div class="form-group hide">
+    <label for="">Security Question</label>
+    <p>Lorem Ipsum dolar sit. this is the secutity question</p>
+  </div>
+  <div class="form-group hide">
+    <label for="security-answer" class="required">Answer</label>
+    <input type="text" class="form-control" id="security-answer" placeholder="">
+  </div>
+  <button type="submit" class="btn btn-primary reset-submit-btn  mb10" >Submit</button>
+  <button type="submit" class="btn btn-primary reset-pwd-btn  mb10 hide" >Submit</button>
+	
+  <div class="validation-alerts">
+  <p class="invalid-email  label-danger">Enter valid User ID</p>
+
+  <p class="invalid-email  label-success">Check your email to complete password reset</p>
+      <p class="invalid-email  label-danger">Incorrect answer</p>
+
+  </div>
+  
+</form>
+</div>
+  </section>
+  </div>
+  </section>
+
+</div>
+<!-- ********************** Body section starts ******** -->
+<script src="js/jquery-1.10.2.js"></script> <!-- Loads the jquery library --> 
+<script src="js/modernizr.custom.js"></script> <!-- Loads the modenizer script --> 
+<script src="js/angular-1.3.js"></script> <!-- Loads the Angular script --> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/picker.js"></script>
+<script src="js/picker.date.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/jquery.scrollbar.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"> </script> 
+<script src="js/markerwithlabel.js"></script> 
+<script src="js/script.js"></script> 
+<script src="js/angular.big.js"></script> <!-- Custom Angular JS script for BIG --> 
+<!--<script src="js/kendo.all.min.js"></script>-->
+
+</body>
+<!-- *********************** Body Section Ends ********************** -->
+</html>
